@@ -1,0 +1,15 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-nav-list {
+  display: flex;
+}
+
+.mat-list-base .mat-list-item {
+  color: white;
+}
+
+.mat-list-base .mat-list-item:hover {
+  background: #5C6BC0;
+}

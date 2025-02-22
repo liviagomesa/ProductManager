@@ -1,0 +1,5 @@
+@import 'src/styles';
+
+h1, h2 {
+  color: mat-color($custom-primary-palette, 500);
+}

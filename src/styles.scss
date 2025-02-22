@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/theming'; // Importa as ferramentas de theming do Angular Material (como funções para gerar paletas e temas)
+@include mat-core(); // Aplica os estilos base do Angular Material (ex.: tipografia, resets)
+@import "~bootstrap/scss/bootstrap";
+
+$custom-primary-palette: mat-palette($mat-indigo);
+$custom-accent-palette: mat-palette($mat-deep-orange);
+$custom-warn-palette: mat-palette($mat-red);
+
+// Criando um tema claro com as cores: indigo (elementos principais), deep orange (elementos secundários) e red (alertas)
+// O mat-palette pega por padrão os tons 300, 500 e 700 das paletas para claro (hovers, backgrounds), principal (botões, headers) e escuro (bordas, sombras) respectivamente
+$custom-theme: mat-light-theme($custom-primary-palette, $custom-accent-palette, $custom-warn-palette);
+
+@include angular-material-theme($custom-theme); // Aplica o tema criado a todos os componentes Angular Material
+
+// Configurações padrão
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

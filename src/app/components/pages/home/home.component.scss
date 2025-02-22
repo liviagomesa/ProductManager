@@ -1,0 +1,9 @@
+@import 'src/styles';
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+h1, h2 {
+  color: mat-color($custom-primary-palette, 500);
+}
