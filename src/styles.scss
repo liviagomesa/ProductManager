@@ -1,6 +1,6 @@
 @import '@angular/material/theming'; // Importa as ferramentas de theming do Angular Material (como funções para gerar paletas e temas)
 @include mat-core(); // Aplica os estilos base do Angular Material (ex.: tipografia, resets)
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 $custom-primary-palette: mat-palette($mat-indigo);
 $custom-accent-palette: mat-palette($mat-deep-orange);

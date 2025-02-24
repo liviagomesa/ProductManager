@@ -1,10 +1,23 @@
 <!-- nome/logo do app e navegação básica (Home, Produtos, Sobre, Login) -->
-<mat-toolbar color="primary">
-  <span>Gerenciador de Produtos</span>
-  <span class="spacer"></span>
-  <mat-nav-list>
-    <a mat-list-item href="/home">Home</a>
-    <a mat-list-item href="/produtos">Produtos</a>
-    <a mat-list-item href="/sobre">Sobre</a>
-  </mat-nav-list>
+<mat-toolbar color="primary" class="navbar navbar-expand-lg">
+  <a href="/" class="navbar-brand ml-3">Gerenciador de Produtos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <span class="spacer"></span> -->
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <mat-nav-list class="navbar-nav d-flex">
+      <mat-list-item class="nav-item">
+        <a mat-list-item class="nav-link" href="/home">Home</a>
+      </mat-list-item>
+      <mat-list-item class="nav-item">
+        <a mat-list-item class="nav-link" href="/produtos">Produtos</a>
+      </mat-list-item>
+      <mat-list-item class="nav-item">
+        <a mat-list-item class="nav-link" href="/sobre">Sobre</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
 </mat-toolbar>

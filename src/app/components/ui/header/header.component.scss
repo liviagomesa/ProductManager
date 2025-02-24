@@ -1,12 +1,4 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-mat-nav-list {
-  display: flex;
-}
-
-.mat-list-base .mat-list-item {
+.mat-list-base .mat-list-item, a {
   color: white;
 }
 

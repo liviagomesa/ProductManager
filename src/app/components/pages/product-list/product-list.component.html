@@ -1,1 +1,84 @@
-<p>product-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 p-4">
+      <mat-form-field appearance="standard">
+        <!-- Rótulo "Filter" aparece no topo do campo -->
+        <mat-label>Filter</mat-label>
+        <!-- (keyup)="applyFilter($event)": Escuta o evento keyup (tecla liberada) e chama o método applyFilter. Isso faz com que o filtro seja aplicado enquanto o usuário digita.
+   #input: Cria uma template reference variable chamada input, que permite acessar o valor digitado diretamente no template -->
+        <input matInput (keyup)="applyFilter($event)" placeholder="Digite para filtrar" #input>
+      </mat-form-field>
+
+      <!-- .mat-elevation-z8 adiciona sombra ao container (nível 8) usando o Material Design -->
+      <div class="example-container mat-elevation-z8">
+        <!-- ngIf exibe a camada de carregamento se os dados estiverem carregando -->
+        <div class="example-loading-shade" *ngIf="isLoadingResults">
+          <mat-spinner></mat-spinner>
+        </div>
+
+        <div class="example-table-container">
+
+          <mat-table [dataSource]="dataSource" class="example-table">
+            <!-- id Column -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+            </ng-container>
+
+            <!-- name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef>name</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+            </ng-container>
+
+            <!-- quantity Column -->
+            <ng-container matColumnDef="quantity">
+              <mat-header-cell *matHeaderCellDef>quantity</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.quantity}}</mat-cell>
+            </ng-container>
+
+            <!-- price Column -->
+            <ng-container matColumnDef="price">
+              <mat-header-cell *matHeaderCellDef>price</mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.price}}</mat-cell>
+            </ng-container>
+
+            <!-- actions Column -->
+            <ng-container matColumnDef="actions">
+              <!-- Ação adicionar -->
+              <mat-header-cell *matHeaderCellDef>
+                <button mat-icon-button color="primary" aria-label="Adicionar produto">
+                  <mat-icon (click)="onAdd()">add</mat-icon>
+                </button>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <!-- Ação ver detalhes -->
+                <button mat-icon-button color="primary" aria-label="Ver informações do produto">
+                  <mat-icon (click)="onGetInfo(row)">info</mat-icon>
+                </button>
+                <!-- Ação editar -->
+                <button mat-icon-button color="primary" aria-label="Editar produto">
+                  <mat-icon (click)="onEdit(row)">edit</mat-icon>
+                </button>
+                <!-- Ação remover -->
+                <button mat-icon-button color="warn" aria-label="Remover produto">
+                  <mat-icon (click)="onDelete(row)">delete</mat-icon>
+                </button>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+            <!-- Row shown when there is no matching data. *matNoDataRow é uma diretiva especial do Angular Material -->
+            <tr class="mat-row" *matNoDataRow>
+              <!-- {{input.value}}: Exibe o termo que o usuário digitou no campo de filtro.
+        colspan="4": Faz o <td> ocupar 4 colunas na tabela, garantindo que a mensagem apareça centralizada. -->
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </mat-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

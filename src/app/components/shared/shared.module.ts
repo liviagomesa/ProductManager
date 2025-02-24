@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductListComponent } from './product-list.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { MaterialModule } from 'src/app/material.module';
-import { SharedModule } from '../../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    ProductListComponent
+    DialogComponent
   ],
   imports: [
     CommonModule,
-    MaterialModule,
-    SharedModule
+    MaterialModule
+  ],
+  exports: [
+    DialogComponent
   ]
 })
-export class ProductListModule { }
+export class SharedModule { }

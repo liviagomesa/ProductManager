@@ -9,6 +9,9 @@ import { MaterialModule } from './material.module';
 import { HomeModule } from './components/pages/home/home.module';
 import { AboutModule } from './components/pages/about/about.module';
 import { ProductListModule } from './components/pages/product-list/product-list.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductFormModule } from './components/pages/product-form/product-form.module';
+import { ProductDetailsModule } from './components/pages/product-details/product-details.module';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ProductListModule } from './components/pages/product-list/product-list.
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     HeaderModule,
     MaterialModule,
     HomeModule,
     AboutModule,
-    ProductListModule
+    ProductListModule,
+    ProductFormModule,
+    ProductDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
